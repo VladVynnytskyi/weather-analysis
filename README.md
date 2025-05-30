@@ -1,2 +1,2 @@
 # weather-analysis
-Weather data analysis in Python - Krakow and Lviv
+Weather data analysis by Python - Krakow and Lviv
