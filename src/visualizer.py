@@ -1,36 +1,37 @@
 import matplotlib.pyplot as plt
 import os
 
+
 def plot_yearly_avg(df):
-    #Build and save a line plot showing the average temperature for each year
+    # Build and save a line plot showing the average temperature for each year
     # Group by year and calculate average temperature
-    yearly_avg = df.groupby(df['date'].dt.year)['temperature'].mean()
+    yearly_avg = df.groupby(df["date"].dt.year)["temperature"].mean()
     os.makedirs("plots", exist_ok=True)
 
-    #Create the figure
-    plt.figure(figsize=(10,5))
-    yearly_avg.plot(marker='o')
+    # create the figure
+    plt.figure(figsize=(10, 5))
+    yearly_avg.plot(marker="o")
 
-    #add title and exis labels
+    # add title, x and y labels
     plt.title("Average Yearly Temperature in Cracow")
     plt.xlabel("Year")
     plt.ylabel("Temperature")
 
-    #add grid and layout
+    # add grid and layout
     plt.grid(True)
     plt.tight_layout()
 
-    #Save plot
+    # save plot
     plt.savefig("plots/yearly_temperature")
     plt.close
 
 
 def plot_monthly_box(df):
-    df['month'] = df['date'].dt.month  # Add a 'month' column
+    df["month"] = df["date"].dt.month  # add a 'month' column
     plt.figure(figsize=(10, 5))
-    df.boxplot(column='temperature', by='month')
+    df.boxplot(column="temperature", by="month")
     plt.title("Monthly Temperature Distribution in Krakow")
-    plt.suptitle("")# removes auto title
+    plt.suptitle("")  # removes auto title
     plt.xlabel("Month")
     plt.ylabel("Temperature")
     plt.tight_layout()
