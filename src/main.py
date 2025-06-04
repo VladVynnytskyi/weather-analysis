@@ -1,5 +1,5 @@
 from data_loader import load_and_clear
-from visualizer import plot_monthly_box, plot_yearly_avg, plot_rolling_avg
+from visualizer import plot_monthly_box, plot_yearly_avg, plot_rolling_avg, plot_anomalies
 
 # Load Krakow weather data from CSV file
 
@@ -14,3 +14,6 @@ plot_yearly_avg(df)
 plot_monthly_box(df)
 
 plot_rolling_avg(df)
+
+#plot anomalies
+plot_anomalies(df)
