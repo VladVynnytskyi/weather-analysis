@@ -90,3 +90,23 @@ def plot_anomalies(df):
     plt.tight_layout()
     plt.savefig("plots/anomalies_temp.png")
     plt.close()
+
+def plot_compare_cities(df1, df2, name1="Krakow", name2="Lviv"):
+
+    #Plot average yearly temperatures for two cities on the same chart.
+    
+
+    df1_yearly = df1.groupby(df1['date'].dt.year)['temperature'].mean()
+    df2_yearly = df2.groupby(df2['date'].dt.year)['temperature'].mean()
+
+    plt.figure(figsize=(10, 6))
+    df1_yearly.plot(label=name1, marker='o')
+    df2_yearly.plot(label=name2, marker='s')
+    plt.title(f"Yearly Average Temperature: {name1} vs {name2}")
+    plt.xlabel("Year")
+    plt.ylabel("Temperature (°C)")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig("plots/compare_krakow_lviv.png")
+    plt.close()
