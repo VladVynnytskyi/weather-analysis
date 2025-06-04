@@ -37,3 +37,24 @@ def plot_monthly_box(df):
     plt.tight_layout()
     plt.savefig("plots/monthly_boxplot.png")
     plt.close()
+
+
+def plot_rolling_avg(df, window=30):
+
+    #Build and save a line chart with a rolling average temperature (default: 30 days).
+
+    df_sorted = df.sort_values('date') 
+
+    df_sorted['rolling_avg'] = df_sorted['temperature'].rolling(window=window).mean()
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(df_sorted['date'], df_sorted['temperature'], alpha=0.3, label='Daily Temperature')
+    plt.plot(df_sorted['date'], df_sorted['rolling_avg'], color='red', label=f'{window}-day Rolling Avg')
+
+    plt.title("Rolling Average Temperature (Krakow)")
+    plt.xlabel("Date")
+    plt.ylabel("Temperature (°C)")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig("plots/rolling_avg_temp.png")
+    plt.close()
