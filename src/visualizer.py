@@ -13,7 +13,7 @@ def plot_yearly_avg(df):
     yearly_avg.plot(marker="o")
 
     # add title, x and y labels
-    plt.title("Average Yearly Temperature in Cracow")
+    plt.title("Average Yearly Temperature in Krakow")
     plt.xlabel("Year")
     plt.ylabel("Temperature")
 
