@@ -1,11 +1,31 @@
-# Weather Analysis
+# 🌦️ Weather Analysis
 
-Weather data analysis for Krakow (and Lviv) using Python.
+Weather data analysis for **Krakow** and **Lviv** **2000-2024** using Python.
 
-## Description
+---
+## 📌 Description
 
-This project loads weather data from CSV, cleans it, and generates plots for yearly average temperature and monthly temperature distribution. All results are saved in the `plots/` folder.
+This project processes weather data from CSV files, cleans it, and performs statistical and visual analysis.  
+Main features:
 
+- 📊 Yearly average temperature for Krakow and Lviv  
+- 📈 Rolling average temperature visualization  
+- 🗓️ Monthly temperature distribution (boxplots)  
+- 🌍 Comparison between Krakow and Lviv  
+- ⚠️ Detection of temperature anomalies  
+- 📌 Minimum and maximum temperature across **2000–2024** (for both cities)  
+- 📌 Average yearly temperatures from **2000–2024** (for both cities)  
+
+All generated plots are stored in the `plots/` folder and in your terminal.
+--- 
+## 🖼️ Example Plots
+
+| Yearly Temperature | Monthly Boxplot |
+|--------------------|-----------------|
+| ![Yearly Temperature](plots/yearly_temperature.png) | ![Monthly Boxplot](plots/monthly_boxplot.png) |
+
+
+---
 ## Installation
 
 1. Create virtual environment:
@@ -50,3 +70,7 @@ Format code with [Black](https://black.readthedocs.io/en/stable/) and [isort](ht
 black src/
 isort src/
 ```
+
+---
+## 👤 Author
+Created by Vladyslav Vynnytskyi ✨
